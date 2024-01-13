@@ -1,0 +1,37 @@
+﻿@model CourseApp.Models.Domain.Courses
+@{
+    ViewData["Title"] = "AddCourse";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content-wrapper">
+    <h1 class="content-header">AddCourse</h1>
+    <div class="content">
+
+
+        <form method="post" action="SaveCourse">
+            <div class="form-group">
+                <label for="coursename">Course Name</label>
+                <input type="text" class="form-control" id="coursename" placeholder="Enter Course Name" asp-for="CourseName" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea type="text" class="form-control" id="description" placeholder="Description" asp-for="Description" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="department">Department</label>
+                <select class="form-control" id="department" asp-for="Department">
+                    <option value="IT">Information Technology</option>
+                    <option value="HR">Human Resourse</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="price">Pricing</label>
+                <input type="text" class="form-control" id="price" placeholder="Price" asp-for="CoursePrice" required />
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+
